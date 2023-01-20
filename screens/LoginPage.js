@@ -1,5 +1,7 @@
 import {View, Text, StyleSheet} from "react-native";
 import {LinearGradient} from "expo-linear-gradient";
+import {TextInput} from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function Login(){
     return(
@@ -19,7 +21,19 @@ export default function Login(){
                 </View>
 
             </View>
-            <View style={styles.middle}></View>
+            <View style={styles.middle}>
+                <Text style={styles.headerText}>Login</Text>
+                <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur</Text>
+                <TextInput
+                    label="Email"
+                    leading={props => <Icon name="account" {...props} />}
+                />
+                <TextInput
+                    label="Password"
+                    leading={props => <Icon name="lock" {...props} />}
+                />
+
+            </View>
             <View style={styles.bottom}></View>
         </View>
     )
@@ -36,7 +50,9 @@ const styles= StyleSheet.create({
     middle:{
         flex:1,
         borderWidth:1,
-        borderColor:'red'
+        borderColor:'red',
+        paddingLeft:10,
+        paddingRight:10
     },
     bottom:{
         height:50,
@@ -72,5 +88,14 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+    },
+    headerText:{
+        fontWeight:'bold',
+        fontSize:50
+    },
+    text:{
+        fontWeight:'normal',
+        fontSize:20
     }
+
 })
