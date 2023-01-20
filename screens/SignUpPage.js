@@ -6,7 +6,7 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 export default function SignUpPage({navigation}){
     return(
         <View style={styles.container}>
-            <View style={{position:'relative'}}>
+            <View style={{width:'100%', height:200, overflow:'hidden', position:'absolute'}}>
                 <View style={styles.v2}>
                     <LinearGradient
                     colors={['#e67e22','#d35400']}
@@ -21,7 +21,7 @@ export default function SignUpPage({navigation}){
                 </View>
 
             </View>
-            <View style={styles.middle}>
+            <ScrollView style={styles.middle}>
                 <Text style={styles.headerText}>Register</Text>
                 <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur</Text>
                 <TextInput
@@ -61,7 +61,7 @@ export default function SignUpPage({navigation}){
                     </TouchableOpacity>
                 </ScrollView>
 
-            </View>
+            </ScrollView>
             <View style={styles.bottom}>
                 <Text style={{}}>Already have an Account? <Text style={{color:'orange'}} onPress={()=>navigation.navigate("Login")}>Login</Text></Text>
             </View>
@@ -81,8 +81,7 @@ const styles= StyleSheet.create({
     middle:{
         flex:1,
         paddingLeft:10,
-        paddingRight:10,
-        justifyContent:'center'
+        paddingRight:10
     },
     bottom:{
         height:50,

@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from "react-native";
 import {LinearGradient} from "expo-linear-gradient";
 import {TextInput} from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
@@ -6,7 +6,7 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 export default function Login({navigation}){
     return(
         <View style={styles.container}>
-            <View style={styles.top}>
+            <View style={{width:'100%', height:200, overflow:'hidden'}}>
                 <View style={styles.v2}>
                     <LinearGradient
                     colors={['#e67e22','#d35400']}
@@ -21,7 +21,7 @@ export default function Login({navigation}){
                 </View>
 
             </View>
-            <View style={styles.middle}>
+            <ScrollView style={styles.middle}>
                 <Text style={styles.headerText}>Login</Text>
                 <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur</Text>
                 <TextInput
@@ -46,7 +46,7 @@ export default function Login({navigation}){
                 </View>
 
 
-            </View>
+            </ScrollView>
             <View style={styles.bottom}>
                 <Text style={{}}>Don't have an Account? <Text style={{color:'orange'}} onPress={()=>navigation.navigate("Signup")}>SignUp</Text></Text>
             </View>
@@ -65,8 +65,7 @@ const styles= StyleSheet.create({
     middle:{
         flex:1,
         paddingLeft:10,
-        paddingRight:10,
-        justifyContent:'center'
+        paddingRight:10
     },
     bottom:{
         height:50,
