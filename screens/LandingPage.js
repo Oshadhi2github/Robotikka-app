@@ -1,4 +1,5 @@
 import {View,ScrollView,ImageBackground,Text, StyleSheet} from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 export default function LandingPage({navigation}){
     return(
         <ScrollView style={styles.container}>
@@ -15,7 +16,9 @@ export default function LandingPage({navigation}){
                         <Text style={styles.title}>two-seater gray sofa</Text>
                         <Text style={styles.price}>2500 USD</Text>
                     </View>
-                    <View style={styles.iconBox}></View>
+                    <View style={styles.iconBox}>
+                        <Ionicons name="save" size={24} color="white" />
+                    </View>
                 </View>
                 <View style={styles.contextInner}>
                     <View style={styles.dataInner}>
@@ -23,7 +26,9 @@ export default function LandingPage({navigation}){
                         <Text style={styles.title}>two-seater gray sofa</Text>
                         <Text style={styles.price}>2500 USD</Text>
                     </View>
-                    <View style={styles.iconBox}></View>
+                    <View style={styles.iconBox}>
+                        <Ionicons name="save" size={24} color="white" />
+                    </View>
                 </View>
             </View>
         </ScrollView>
@@ -76,6 +81,8 @@ const styles = StyleSheet.create({
         backgroundColor:'#1abc9c',
         borderRadius:4,
         position:'absolute',
+        alignItems:'center',
+        justifyContent:'center',
         right:0,
         bottom:0
     },
