@@ -1,8 +1,11 @@
-import {View,ScrollView,ImageBackground,Text, StyleSheet} from 'react-native';
+import {View, ScrollView, ImageBackground, Text, StyleSheet, Button} from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 export default function LandingPage({navigation}){
     return(
         <ScrollView style={styles.container}>
+
+            <Button onPress={()=>{navigation.navigate('Dashboard')}}>Dashboard</Button>
+
             <View style={styles.card}>
                 <View style={styles.cardInner}></View>
             </View>
