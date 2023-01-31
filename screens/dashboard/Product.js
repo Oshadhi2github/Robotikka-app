@@ -3,16 +3,40 @@ import {View, Button,TextInput, Image, ScrollView, ImageBackground, Text, StyleS
 import Ionicons from '@expo/vector-icons/Ionicons';
 export default function Product(){
 
+    let [displayName,setDisplayName]= useState('');
+    let [description,setDescription]= useState('');
+    let [unitPrice,setUnitPrice]= useState(0);
+    let [qty,setQty]= useState(0);
+    let [sellingPrice,setSellingPrice]= useState(0);
+
+
+    function saveData() {
+        console.log(displayName);
+        console.log(description);
+        console.log(unitPrice);
+        console.log(qty);
+        console.log(sellingPrice);
+    }
 
     return(
         <View style={styles.container}>
-            <TextInput style={styles.input} placeholder='Display Name'/>
-            <TextInput style={styles.input} placeholder='Description'/>
-            <TextInput style={styles.input} placeholder='Unit Price'/>
-            <TextInput style={styles.input} placeholder='Qty'/>
-            <TextInput style={styles.input} placeholder='Selling Price'/>
+            <TextInput style={styles.input}
+                       onChangeText={(text=>{setDisplayName(text)})}
+                       placeholder='Display Name'/>
+            <TextInput style={styles.input}
+                       onChangeText={(text=>{setDescription(text)})}
+                       placeholder='Description'/>
+            <TextInput style={styles.input}
+                       onChangeText={(text=>{setUnitPrice(Number.parseInt(text))})}
+                       placeholder='Unit Price'/>
+            <TextInput style={styles.input}
+                       onChangeText={(text=>{setQty(Number.parseInt(text))})}
+                       placeholder='Qty'/>
+            <TextInput style={styles.input}
+                       onChangeText={(text=>{setSellingPrice(Number.parseInt(text))})}
+                       placeholder='Selling Price'/>
 
-            <TouchableOpacity style={styles.btnOuter}>
+            <TouchableOpacity style={styles.btnOuter} onPress={()=>{saveData();}}>
                 <Text style={styles.btnText}>Submit Data</Text>
             </TouchableOpacity>
         </View>
